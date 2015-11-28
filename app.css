@@ -1,0 +1,19 @@
+body {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 8px solid rgba(0, 0, 0, 0.6);
+  display: flex;
+  margin: 0;
+  padding: 0;
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+}
+
+.clock {
+  align-self: center;
+  color: #fff;
+  flex-grow: 1;
+  font-size: 24px;
+  text-align: center;
+  text-shadow: 2px 2px 2px #000;
+}
