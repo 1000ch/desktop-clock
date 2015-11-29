@@ -16,6 +16,7 @@ app.on('window-all-closed', () => {
 });
 
 app.on('ready', () => {
+  Menu.setApplicationMenu(new Menu());
   setupBrowserWindow();
   setupTrayIcon();
 });

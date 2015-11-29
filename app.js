@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let mm = padZero(date.getMinutes());
     let ss = padZero(date.getSeconds());
 
-    clock.innerHTML = `${YYYY}/${MM}/${DD} (${AA})<br>${hh}:${mm}:${ss}`;
+    clock.innerHTML = `${YYYY}/${MM}/${DD} ${AA}<br>${hh}:${mm}:${ss}`;
     setTimeout(updateClock, 1000 - new Date().getMilliseconds());
   }
 
