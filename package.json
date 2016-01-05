@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/1000ch/desktop-clock#readme",
   "dependencies": {
-    "electron-prebuilt": "^0.35.1"
+    "electron-prebuilt": "^0.35.1",
+    "moment": "^2.11.0"
   },
   "devDependencies": {
     "electron-packager": "^5.1.1",
