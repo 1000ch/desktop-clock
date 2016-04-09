@@ -1,7 +1,6 @@
 'use strict';
 
 const packager = require('electron-packager');
-const assign = require('object-assign');
 const pkg = require('./package');
 const devDependencies = Object.keys(pkg.devDependencies);
 
@@ -36,7 +35,7 @@ function pack(platform, arch) {
     return;
   }
 
-  packager(assign({}, required, optional, {
+  packager(Object.assign({}, required, optional, {
     platform: platform,
     arch: arch,
     out: `release`

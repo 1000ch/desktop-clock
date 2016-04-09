@@ -26,7 +26,6 @@
     "moment": "^2.11.0"
   },
   "devDependencies": {
-    "electron-packager": "^6.0.1",
-    "object-assign": "^4.0.1"
+    "electron-packager": "^6.0.1"
   }
 }
