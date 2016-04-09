@@ -8,7 +8,7 @@ const devDependencies = Object.keys(pkg.devDependencies);
 let required = {
   dir: './',
   name: 'Desktop Clock',
-  version: '0.35.1'
+  version: '0.37.5'
 };
 
 let optional = {
