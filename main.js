@@ -16,7 +16,7 @@ app.on('window-all-closed', () => {
 });
 
 app.on('ready', () => {
-  Menu.setApplicationMenu(new Menu());
+  Menu.setApplicationMenu(setupMenu());
   setupBrowserWindow();
   setupTrayIcon();
 });
@@ -28,7 +28,7 @@ function setupBrowserWindow() {
     transparent: true,
     frame: false,
     resizable: false,
-    'skip-taskbar': true,
+    skipTaskbar: true,
     show: false
   });
   mainWindow.on('closed', () => mainWindow = null);
@@ -66,4 +66,40 @@ function setupTrayIcon() {
     }])
   );
   trayIcon.setToolTip(app.getName());
+}
+
+function setupMenu() {
+  const template = [];
+
+  if (process.platform === 'darwin') {
+    const name = app.getName();
+    template.unshift({
+      label: name,
+      submenu: [{
+        label: `About ${name}`,
+        role: 'about'
+      }, {
+        type: 'separator'
+      }, {
+        label: `Hide ${name}`,
+        accelerator: 'Command+H',
+        role: 'hide'
+      }, {
+        label: 'Hide Others',
+        accelerator: 'Command+Alt+H',
+        role: 'hideothers'
+      }, {
+        label: 'Show All',
+        role: 'unhide'
+      }, {
+        type: 'separator'
+      }, {
+        label: 'Quit',
+        accelerator: 'Command+Q',
+        click: () => app.quit()
+      }]
+    });
+  }
+
+  return Menu.buildFromTemplate(template);
 }
